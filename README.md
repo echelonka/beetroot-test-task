@@ -1,29 +1,15 @@
-# beetroot-test-task
+# Beetroot test task (SparkBeyond)
 
 ## Project setup
-```
-yarn install
-```
+1. `yarn install` or `npm install`
+2. `yarn serve` or `npm run serve`
+3. Go to [http://localhost:8080/](http://localhost:8080/)
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
+#### Quick description
+The test task is made via Vue.js + VueX + D3.js. The example directed graph shows several causes of crime.
 
-### Compiles and minifies for production
-```
-yarn run build
-```
+#### Functionality
+The graph nodes can be selected to read more info about a cause of crime (paths between two selected nodes are not being highlighted).
+Then they can be deselected clicking on the first button.
 
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+A possibility to add a new node filling its name, target, and connection type, updating the graph in realtime.

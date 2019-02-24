@@ -1,28 +1,41 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div id="app">
+        <Header/>
+        <main class="main">
+            <div class="main__grid">
+                <Graph/>
+                <Sidebar/>
+            </div>
+
+        </main>
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+    import Header from './components/Header'
+    import Graph from './components/Graph'
+    import Sidebar from './components/Sidebar'
+    import data from './assets/crime'
 
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
-}
+    export default {
+        name: 'app',
+        components: {
+            Header,
+            Graph,
+            Sidebar
+        },
+
+        beforeCreate() {
+            this.$store.commit('setData', data)
+        }
+    }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="sass">
+    @import './sass/main.sass'
+
+    .main
+        &__grid
+            display: grid
+            grid-template-columns: 70% 30%
 </style>
